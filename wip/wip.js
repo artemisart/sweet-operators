@@ -1,26 +1,5 @@
 'use strict'
 
-// macro + {
-// 	rule infix {
-// 		$a | $b
-// 	} => #{
-// 		$a.__add__($b)
-// 	}
-// }
-//
-// var a = 1
-// var c = 2
-// print(a + c)
-
-// operators syntax :
-//  - binary
-//      operator <name> <precedence> <associativity>
-//          { <left operand>, <right operand> } => #{ <template> }
-//  - unary
-//      operator <name> <precedence>
-//          { <operand> } => #{ <template> }
-
-
 function subclass(proto, baseProto) {
 	while (proto = proto.__proto__)
 		if (proto === baseProto)
