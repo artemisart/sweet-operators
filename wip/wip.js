@@ -50,7 +50,6 @@ macro ops {
 	}
 }
 
-ops symmetric // left associative
 ops unary
 	// new
 	++	15	__inc__
@@ -61,21 +60,24 @@ ops unary
 	-	14	__neg__
 	// typeof void delete yield
 
+// left associative
+ops symmetric
+	@	13	__matmul__
 	*	13	__mul__
 	/	13	__div__
-	%	13	TODO
+	div	13	__intdiv__
+	%	13	__remainder__ // js (%) operator is not a real modulo operator (see tests)
 	+	12	__add__
 	-	12	__sub__
 	>>	11 	__rshift__
 	<<	11	__lshift__
 	>>>	11	__rrshift__
-	<	10	__lt__
-	<=	10	__le__
-	>	10	__gt__
-	>=	10	__ge__
-// in instanceof == != === !== would be too dangerous to change
+	// in instanceof
+	==	9	__eq__
+	!=	9	__ne__
+	// === !==
 	&	8	__and__
-	^	7	__exp__
+	^	7	__xor__
 	|	6	__or__
 	// &&	5	__AND__
 	// ||	4	__OR__
