@@ -17,6 +17,7 @@ macro op {
 		letstx $error = [makeValue('Operator '+funcname+' ('+name+') was called on an object that does not implement it', #{ $context })]
 		return #{
 			operator $name $precedence $associativity { $a, $b } => #{ $func($a, $b) }
+			// delegator function (delegates op implementation to the objects)
 			function $func(a, b) {
 				// pick the most specialized implementation :
 				// TODO handle null/undefined operands
