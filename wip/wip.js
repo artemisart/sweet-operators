@@ -40,6 +40,14 @@ macro ops {
 		$(op symmetric $name $precedence left $func)
 		...
 	}
+	rule { asymmetric $($name $precendence:lit $func:ident $opp:ident) ...} => {
+		$(op asymmetric $name $precedence left $func $opp)
+		...
+	}
+	rule { unary $($name $precedence:lit $func:ident) ... } => {
+		$(op unary $name $precedence $func)
+		...
+	}
 }
 
 ops symmetric // left associative
