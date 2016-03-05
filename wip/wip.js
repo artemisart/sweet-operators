@@ -91,6 +91,8 @@ ops asymmetric
 
 // pipe functions
 operator (|>) 1 left { $a, $b } => #{ $b($a) }
+// right associative
+op symmetric ** 14 right __pow__
 
 
 // builtin unary op precedence :
