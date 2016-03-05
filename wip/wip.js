@@ -67,6 +67,7 @@ ops symmetric
 	/	13	__div__
 	div	13	__intdiv__
 	%	13	__remainder__ // js (%) operator is not a real modulo operator (see tests)
+	mod	13	__mod__
 	+	12	__add__
 	-	12	__sub__
 	>>	11 	__rshift__
