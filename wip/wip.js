@@ -19,6 +19,7 @@ macro op {
 			operator $name $precedence $associativity { $a, $b } => #{ $func($a, $b) }
 			function $func(a, b) {
 				// pick the most specialized implementation :
+				// TODO handle null/undefined operands
 				if ($funcname in b && subclass(b.__proto__, a.__proto__))
 					b.$func(a)
 				else if ($funcname in a)
