@@ -1,0 +1,6 @@
+=>
+->
+in
+
+// auto map ideas :
+:: *. :
