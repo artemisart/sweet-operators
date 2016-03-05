@@ -83,6 +83,11 @@ ops symmetric
 	// &&	5	__AND__
 	// ||	4	__OR__
 
+ops asymmetric
+	<	10	__lt__	__ge__
+	<=	10	__le__	__gt__
+	>	10	__gt__	__le__
+	>=	10	__ge__	__lt__
 
 // pipe functions
 operator (|>) 1 left { $a, $b } => #{ $b($a) }
