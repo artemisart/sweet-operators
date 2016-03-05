@@ -95,6 +95,8 @@ operator (|>) 1 left { $a, $b } => #{ $b($a) }
 // right associative
 op symmetric ** 14 right __pow__
 
+// 'not in' operator, with same precedence as 'in'
+operator (not in) 10 left { $a, $b } => { !($a in $b) }
 
 // builtin unary op precedence :
 
