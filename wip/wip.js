@@ -90,8 +90,6 @@ ops asymmetric
 	>	10	__gt__	__le__
 	>=	10	__ge__	__lt__
 
-// pipe functions
-operator (|>) 1 left { $a, $b } => #{ $b($a) }
 // right associative
 op symmetric ** 14 right __pow__
 
@@ -99,6 +97,8 @@ op symmetric ** 14 right __pow__
 operator (not in) 10 left { $a, $b } => { !($a in $b) }
 
 
+// pipe functions
+operator (|>) 1 left { $a, $b } => #{ $b($a) }
 
 // TODO implement mirrored operators for subclasses (-> call the most specific operator possible):
 // function __LT(a, b)
