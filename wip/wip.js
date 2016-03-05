@@ -83,7 +83,6 @@ ops symmetric
 	// &&	5	__AND__
 	// ||	4	__OR__
 
-operator (^^) 14 right { $base, $exp } => #{ Math.pow($base, $exp) }
 
 // pipe functions
 operator (|>) 1 left { $a, $b } => #{ $b($a) }
