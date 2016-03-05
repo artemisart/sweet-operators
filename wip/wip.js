@@ -28,6 +28,12 @@ macro op {
 			}
 		}
 	}
+	case { $context asymmetric $name $precedence: lit $associativity $func: ident $opp: ident } => {
+		throw new Error('not implemented')
+	}
+	case { $context unary $name $precedence:lit $func:ident } => {
+		throw new Error('not implemented')
+	}
 }
 macro ops {
 	rule { symmetric $($name $precedence:lit $func:ident) ... } => {
