@@ -1,5 +1,6 @@
 'use strict'
 
+// is proto a strict subclass of baseProto ?
 function subclass(proto, baseProto) {
 	while (proto = proto.__proto__)
 		if (proto === baseProto)
@@ -7,6 +8,7 @@ function subclass(proto, baseProto) {
 	return false
 }
 
+// create an macro operator and the corresponding function
 macro op {
 	case { $context symmetric $name $precedence:lit $associativity $func:ident } => {
 		var name = unwrapSyntax(#{ $name })
