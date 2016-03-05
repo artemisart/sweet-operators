@@ -98,34 +98,7 @@ op symmetric ** 14 right __pow__
 // 'not in' operator, with same precedence as 'in'
 operator (not in) 10 left { $a, $b } => { !($a in $b) }
 
-// builtin unary op precedence :
 
-// new 16
-// ++  15
-// --  15
-// TODO operator ! 14 { $a } => #{ __NEG($a) }
-// operator (~) 14 { $a } => #{ __bINV($a) }
-operator + 14 { $a } => #{ __POS($a) }
-operator - 14 { $a } => #{ __NEG($a) }
-// typeof  14
-// void    14
-// delete  14
-// yield 2
-// TODO operator (abs) ? { $a } => #{ __ABS($a) }
-
-// builtin binary op precedence :
-
-// TODO operator @ ? left { $a, $b} => #{ __MATMUL($a, $b) }
-// TODO operator (**) ? left { $a, $b} => #{ __POW($a, $b) }
-// floordiv ?
-// in	10	left
-// instanceof	10	left
-operator (==) 10 left { $a, $b } => #{ $a.__eq__($b) }
-operator (!=) 10 left { $a, $b } => #{ $a.__ne__($b) } // TODO default to !__eq__
-// ===	9	left
-// !==	9	left
-// operator (is) ? left { $a, $b } => #{ __IS($a, $b) }
-// operator (is not) ? left { $a, $b } => #{ __ISNOT($a, $b) }
 
 // TODO implement mirrored operators for subclasses (-> call the most specific operator possible):
 // function __LT(a, b)
