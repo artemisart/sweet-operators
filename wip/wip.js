@@ -96,6 +96,7 @@ op symmetric ** 14 right __pow__
 // 'not in' operator, with same precedence as 'in'
 operator (not in) 10 left { $a, $b } => { !($a in $b) }
 
+// TODO defaults for (at least): == !=
 
 // pipe functions
 operator (|>) 1 left { $a, $b } => #{ $b($a) }
