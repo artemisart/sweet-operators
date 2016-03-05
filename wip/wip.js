@@ -51,6 +51,16 @@ macro ops {
 }
 
 ops symmetric // left associative
+ops unary
+	// new
+	++	15	__inc__
+	--	15	__dec__
+	!	14	__not__
+	~	14	__inv__
+	+	14	__pos__
+	-	14	__neg__
+	// typeof void delete yield
+
 	*	13	__mul__
 	/	13	__div__
 	%	13	TODO
